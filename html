@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoGuardian - Cuidando hoje para proteger o amanhã</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>EcoGuardian</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Início</a></li>
+                    <li><a href="#about" class="nav-link">Quem Somos</a></li>
+                    <li><a href="#projects" class="nav-link">Projetos</a></li>
+                    <li><a href="#impact" class="nav-link">Impacto</a></li>
+                    <li><a href="#blog" class="nav-link">Blog</a></li>
+                    <li><a href="#map" class="nav-link">Mapa</a></li>
+                    <li><a href="#participate" class="nav-link">Participe</a></li>
+                    <li><a href="#contact" class="nav-link">Contato</a></li>
+                    <li><a href="#donate" class="nav-link donate-btn">Doar</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Cuidando hoje para proteger o amanhã</h1>
+            <p class="hero-subtitle">Juntos construímos um futuro mais sustentável através de tecnologia, inovação e ação coletiva.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">Conheça nossos projetos</a>
+                <a href="#contact" class="btn btn-secondary">Fale conosco</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="floating-elements">
+                <div class="floating-element"><i class="fas fa-leaf"></i></div>
+                <div class="floating-element"><i class="fas fa-recycle"></i></div>
+                <div class="floating-element"><i class="fas fa-solar-panel"></i></div>
+                <div class="floating-element"><i class="fas fa-tree"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Quem Somos</h2>
+                <p>Conheça nossa história e propósito</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Nossa História</h3>
+                    <p>A EcoGuardian nasceu da necessidade urgente de criar soluções sustentáveis para os desafios ambientais do século XXI. Fundada por um grupo de ambientalistas e tecnólogos, nossa organização combina inovação tecnológica com ação ambiental prática.</p>
+                   
+                    <div class="mission-vision">
+                        <div class="mission">
+                            <h4><i class="fas fa-bullseye"></i> Missão</h4>
+                            <p>Proteger e preservar o meio ambiente através de tecnologia inovadora e engajamento comunitário.</p>
+                        </div>
+                        <div class="vision">
+                            <h4><i class="fas fa-eye"></i> Visão</h4>
+                            <p>Ser referência global em soluções sustentáveis que harmonizem desenvolvimento e preservação ambiental.</p>
+                        </div>
+                        <div class="values">
+                            <h4><i class="fas fa-heart"></i> Valores</h4>
+                            <p>Sustentabilidade, inovação, transparência, colaboração e responsabilidade social.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-icons">
+                    <div class="icon-card">
+                        <i class="fas fa-seedling"></i>
+                        <h4>Sustentabilidade</h4>
+                    </div>
+                    <div class="icon-card">
+                        <i class="fas fa-laptop-code"></i>
+                        <h4>Tecnologia</h4>
+                    </div>
+                    <div class="icon-card">
+                        <i class="fas fa-users"></i>
+                        <h4>Comunidade</h4>
+                    </div>
+                    <div class="icon-card">
+                        <i class="fas fa-globe-americas"></i>
+                        <h4>Impacto Global</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossos Projetos</h2>
+                <p>Iniciativas que estão transformando o mundo</p>
+            </div>
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="impact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nosso Impacto</h2>
+                <p>Resultados que fazem a diferença</p>
+            </div>
+            <div class="impact-stats">
+                <div class="stat-card">
+                    <i class="fas fa-tree"></i>
+                    <div class="stat-number" data-target="1250">0</div>
+                    <div class="stat-label">Árvores Plantadas</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-number" data-target="850">0</div>
+                    <div class="stat-label">Voluntários Ativos</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-recycle"></i>
+                    <div class="stat-number" data-target="45">0</div>
+                    <div class="stat-label">Toneladas Recicladas</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-solar-panel"></i>
+                    <div class="stat-number" data-target="120">0</div>
+                    <div class="stat-label">Painéis Solares Instalados</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <div class="section-header">
+                <h2>Blog & Notícias</h2>
+                <p>Fique por dentro das últimas novidades</p>
+            </div>
+            <div class="blog-filters">
+                <button class="filter-btn active" data-category="all">Todos</button>
+                <button class="filter-btn" data-category="sustentabilidade">Sustentabilidade</button>
+                <button class="filter-btn" data-category="tecnologia">Tecnologia</button>
+                <button class="filter-btn" data-category="projetos">Projetos</button>
+            </div>
+            <div class="blog-grid" id="blogGrid">
+                <!-- Blog posts will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map" class="map-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Mapa de Atuação</h2>
+                <p>Veja onde estamos fazendo a diferença</p>
+            </div>
+            <div id="map" class="interactive-map"></div>
+        </div>
+    </section>
+
+    <!-- Participate Section -->
+    <section id="participate" class="participate">
+        <div class="container">
+            <div class="section-header">
+                <h2>Participe</h2>
+                <p>Junte-se a nós nessa missão</p>
+            </div>
+            <div class="participate-options">
+                <div class="participate-card">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Seja Voluntário</h3>
+                    <p>Contribua com seu tempo e habilidades para nossos projetos ambientais.</p>
+                    <button class="btn btn-primary" onclick="openVolunteerForm()">Quero ser voluntário</button>
+                </div>
+                <div class="participate-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Parceria Empresarial</h3>
+                    <p>Sua empresa pode fazer parte da mudança que o mundo precisa.</p>
+                    <button class="btn btn-primary" onclick="openPartnerForm()">Seja parceiro</button>
+                </div>
+                <div class="participate-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Apoie Financeiramente</h3>
+                    <p>Suas doações nos ajudam a expandir nosso impacto ambiental.</p>
+                    <button class="btn btn-primary" onclick="openDonationForm()">Fazer doação</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donate" class="donate">
+        <div class="container">
+            <div class="section-header">
+                <h2>Faça uma Doação</h2>
+                <p>Sua contribuição faz a diferença</p>
+            </div>
+            <div class="donation-content">
+                <div class="donation-form">
+                    <h3>Escolha o valor da sua doação</h3>
+                    <div class="donation-amounts">
+                        <button class="amount-btn" data-amount="25">R$ 25</button>
+                        <button class="amount-btn" data-amount="50">R$ 50</button>
+                        <button class="amount-btn" data-amount="100">R$ 100</button>
+                        <button class="amount-btn" data-amount="250">R$ 250</button>
+                        <input type="number" id="customAmount" placeholder="Outro valor" class="custom-amount">
+                    </div>
+                    <div class="donation-frequency">
+                        <label><input type="radio" name="frequency" value="once" checked> Doação única</label>
+                        <label><input type="radio" name="frequency" value="monthly"> Doação mensal</label>
+                    </div>
+                    <button class="btn btn-primary btn-large" onclick="processDonation()">Doar Agora</button>
+                </div>
+                <div class="donation-impact">
+                    <h3>Seu impacto</h3>
+                    <div class="impact-examples">
+                        <div class="impact-item">
+                            <span class="amount">R$ 25</span>
+                            <span class="description">Planta 5 mudas de árvores nativas</span>
+                        </div>
+                        <div class="impact-item">
+                            <span class="amount">R$ 50</span>
+                            <span class="description">Financia 1 dia de monitoramento ambiental</span>
+                        </div>
+                        <div class="impact-item">
+                            <span class="amount">R$ 100</span>
+                            <span class="description">Apoia 1 família na agricultura sustentável</span>
+                        </div>
+                        <div class="impact-item">
+                            <span class="amount">R$ 250</span>
+                            <span class="description">Instala 1 sistema de captação de água da chuva</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Entre em Contato</h2>
+                <p>Estamos aqui para ouvir você</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Endereço</h4>
+                            <p>Rua Sustentável, 123<br>São Paulo, SP - 01234-567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Telefone</h4>
+                            <p>(11) 9999-8888</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>E-mail</h4>
+                            <p>contato@ecoguardian.org</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Assunto" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Sua mensagem" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-leaf"></i>
+                        <span>EcoGuardian</span>
+                    </div>
+                    <p>Cuidando hoje para proteger o amanhã. Juntos por um futuro mais sustentável.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#about">Quem Somos</a></li>
+                        <li><a href="#projects">Projetos</a></li>
+                        <li><a href="#impact">Impacto</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Participe</h4>
+                    <ul>
+                        <li><a href="#participate">Seja Voluntário</a></li>
+                        <li><a href="#donate">Fazer Doação</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Receba nossas novidades</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Seu e-mail">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EcoGuardian. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="volunteerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Cadastro de Voluntário</h2>
+            <form id="volunteerForm">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Nome completo" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="E-mail" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Telefone" required>
+                </div>
+                <div class="form-group">
+                    <select name="interest" required>
+                        <option value="">Área de interesse</option>
+                        <option value="plantio">Plantio de árvores</option>
+                        <option value="reciclagem">Reciclagem</option>
+                        <option value="educacao">Educação ambiental</option>
+                        <option value="tecnologia">Tecnologia</option>
+                        <option value="comunicacao">Comunicação</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="Conte-nos sobre sua motivação" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
